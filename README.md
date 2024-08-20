@@ -13,6 +13,6 @@
 i am actually doing the CRUD.
 
 ## how to install :
-1.copy the repository.
-2.In the bash command enter : php artisan serve.
-3.don't forget to launch mysql and apache2.(for php my admin and MySQL serv): if u use wsl or linux : sudo service apache/mysql start.
+* copy the repository.
+** In the bash command enter : php artisan serve.
+*** Don't forget to launch mysql and apache2.(for php my admin and MySQL serv): if u use wsl or linux : sudo service apache/mysql start.
