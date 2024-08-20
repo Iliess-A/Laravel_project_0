@@ -1,0 +1,80 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Restaurant;
+use Illuminate\Http\Request;
+
+class RestaurantController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return view('restaurant.index',['restaurants' => Restaurant::latest()->get()]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('restaurant/create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        // dd($request);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        try {
+            $restaurant = Restaurant::findOrFail($id);
+            return view('restaurant.show', ['restaurant' => $restaurant]);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+            // Handle the case where the ID is not found
+            return response()->view('errors.404_restaurant', [], 404); // You can customize the error view
+        }
+        
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        return view('restaurant.create',compact('id'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        // // Logic to update an existing article
+        // $restaurant = Restaurant::findOrFail($id);
+        // $restaurant->name = $request->title;
+        // $restaurant->description = $request->content;
+        // $restaurant->save();
+
+        // return redirect()->back()->with('success', 'Article updated successfully!');
+
+        dd($request->all());
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
+}
