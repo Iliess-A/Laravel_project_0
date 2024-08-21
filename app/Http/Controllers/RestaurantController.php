@@ -31,13 +31,13 @@ class RestaurantController extends Controller
     public function store(CreatePostRequest $request)
     {
         Restaurant::create([
-            'name'=>$request->name_restaurant,
-            'adress'=>$request->adress_restaurant,
-            'zipCode'=>$request->zipCode_restaurant,
-            'town'=>$request->town_restaurant,
-            'country'=>$request->country_restaurant,
-            'description'=>$request->description_restaurant,
-            'review'=>$request->review_restaurant,
+            'name'=>strip_tags($request->name_restaurant),
+            'adress'=>strip_tags($request->adress_restaurant),
+            'zipCode'=>strip_tags($request->zipCode_restaurant),
+            'town'=>strip_tags($request->town_restaurant),
+            'country'=>strip_tags($request->country_restaurant),
+            'description'=>strip_tags($request->description_restaurant),
+            'review'=>strip_tags($request->review_restaurant),
             'updated_at'=>NOW(),
             'created_at'=>NOW()
 
