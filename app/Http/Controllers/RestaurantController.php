@@ -42,6 +42,7 @@ class RestaurantController extends Controller
             'created_at'=>NOW()
 
         ]);
+        return back()->with('success', 'Restaurant created successfully!');
     }
 
     /**

@@ -32,6 +32,16 @@
 
     <button type="submit">Submit</button>
 </form>
+
+
+<!-- 
+// handle errors and succes message;
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -40,4 +50,4 @@
             @endforeach
         </ul>
     </div>
-@endif
+@endif -->
