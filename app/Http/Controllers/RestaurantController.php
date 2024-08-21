@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreatePostRequest;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class RestaurantController extends Controller
 {
@@ -26,9 +28,20 @@ class RestaurantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        // dd($request);
+        Restaurant::create([
+            'name'=>$request->name_restaurant,
+            'adress'=>$request->adress_restaurant,
+            'zipCode'=>$request->zipCode_restaurant,
+            'town'=>$request->town_restaurant,
+            'country'=>$request->country_restaurant,
+            'description'=>$request->description_restaurant,
+            'review'=>$request->review_restaurant,
+            'updated_at'=>NOW(),
+            'created_at'=>NOW()
+
+        ]);
     }
 
     /**

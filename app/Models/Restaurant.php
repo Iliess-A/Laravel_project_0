@@ -10,7 +10,7 @@ class Restaurant extends Model
     use HasFactory;
 
     private int $id;
-    private string $name;
+    protected $fillable =['name','adress','country','town','zipCode','description','review'];
     // private string $adress;
     // private int $zipcode;
     // private string $town;
