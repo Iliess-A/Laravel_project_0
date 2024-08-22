@@ -34,7 +34,7 @@
 </form>
 
 
-<!-- 
+
 // handle errors and succes message;
 @if(session('success'))
     <div class="alert alert-success">
@@ -50,4 +50,4 @@
             @endforeach
         </ul>
     </div>
-@endif -->
+@endif
